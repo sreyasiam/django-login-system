@@ -1,0 +1,109 @@
+{% load static %}
+<html>
+<head>
+<title>Login</title>
+</head>
+
+<body style="margin:0;">
+
+<header style="
+background-color:#F1C27D;
+height:140px;
+padding:20px;
+">
+
+<img src="{% static 'images/maltipoo.jpg' %}"
+     width="160"
+     height="120"
+     style="float:left;">
+
+<a href="index"
+   style="
+   float:right;
+   margin-top:40px;
+   margin-right:20px;
+   font-size:30px;
+   color:white;
+   text-decoration:none;
+   ">
+   Home
+</a>
+
+<a href="register"
+   style="
+   float:right;
+   margin-top:40px;
+   margin-right:40px;
+   font-size:30px;
+   color:white;
+   text-decoration:none;
+   ">
+   Register
+</a>
+
+</header>
+
+<div style="
+height:400px;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+
+<form method="POST" action="{% url 'login' %}">
+{% csrf_token %}
+<table border="1">
+
+<tr>
+<th colspan="2" style="font-size:30px;">
+Login
+</th>
+</tr>
+
+<tr>
+<td style="font-size:25px;">Username</td>
+<td><input type="text" name="username" style="font-size:20px;"></td>
+</tr>
+
+<tr>
+<td style="font-size:25px;">Password</td>
+<td><input type="password" name="password" style="font-size:20px;"></td>
+</tr>
+
+{% if error %}
+<tr>
+<td colspan="2" style="color:red; font-size:18px; text-align:center;">
+{{ error }}
+</td>
+</tr>
+{% endif %}
+
+<tr>
+<td>
+<input type="submit" value="Login" style="font-size:20px;">
+</td>
+<td>
+<input type="reset" value="Reset" style="font-size:20px;">
+</td>
+</tr>
+
+</table>
+</form>
+
+</div>
+
+<footer style="
+background-color:#F1C27D;
+height:100px;
+text-align:center;
+line-height:100px;
+color:white;
+font-size:25px;
+">
+
+@mysite
+
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,141 @@
+
+{% load static %}
+<html>
+<head>
+<title>Register</title>
+</head>
+
+<body style="margin:0;">
+
+<header style="
+background-color:#F1C27D;
+height:140px;
+padding:20px;
+">
+
+<img src="{% static 'images/maltipoo.jpg' %}"
+     width="160"
+     height="120"
+     style="float:left;">
+
+<a href="index"
+   style="
+   float:right;
+   margin-top:40px;
+   margin-right:20px;
+   font-size:30px;
+   color:white;
+   text-decoration:none;
+   ">
+   Home
+</a>
+
+<a href="login"
+   style="
+   float:right;
+   margin-top:40px;
+   margin-right:40px;
+   font-size:30px;
+   color:white;
+   text-decoration:none;
+   ">
+   Login
+</a>
+
+</header>
+
+<div style="
+height:500px;
+display:flex;
+justify-content:center;
+align-items:center;
+">
+
+<form method="POST" action="{% url 'register' %}">
+{% csrf_token %}
+<table border="1">
+
+<tr>
+<th colspan="2" style="font-size:30px;">
+Register
+</th>
+</tr>
+
+<tr>
+<td style="font-size:22px;">Name</td>
+<td><input type="text" name="name" style="font-size:18px;"></td>
+</tr>
+
+<tr>
+<td style="font-size:22px;">Gender</td>
+<td style="font-size:20px;">
+<input type="radio" name="gender" value="Male"> Male
+<input type="radio" name="gender" value="Female"> Female
+<input type="radio" name="gender" value="Others"> Others
+</td>
+</tr>
+
+<tr>
+<td style="font-size:22px;">Qualification</td>
+<td>
+<select name="qualification" style="font-size:18px;">
+<option>Select</option>
+<option>Plus Two</option>
+<option>Degree</option>
+<option>PG</option>
+</select>
+</td>
+</tr>
+
+<tr>
+<td style="font-size:22px;">Phone</td>
+<td><input type="text" name="phone" style="font-size:18px;"></td>
+</tr>
+
+<tr>
+<td style="font-size:22px;">Email</td>
+<td><input type="email" name="email" style="font-size:18px;"></td>
+</tr>
+
+<tr>
+<td style="font-size:22px;">Username</td>
+<td><input type="text" name="username" style="font-size:18px;"></td>
+</tr>
+
+<tr>
+<td style="font-size:22px;">Password</td>
+<td><input type="password" name="password" style="font-size:18px;"></td>
+</tr>
+
+<tr>
+<td>
+<input type="reset" value="Reset"
+style="font-size:18px;">
+</td>
+
+<td>
+<input type="submit" value="Register"
+style="font-size:18px;">
+</td>
+</tr>
+
+</table>
+</form>
+
+</div>
+
+<footer style="
+background-color:#F1C27D;
+height:100px;
+text-align:center;
+line-height:100px;
+color:white;
+font-size:25px;
+">
+
+@mysite
+
+</footer>
+
+</body>
+</html>
